@@ -1,7 +1,8 @@
-package main.Login;
+package main.User;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import main.Util.ConnectMySQL;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,7 +10,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Map;
 
-public class Action {
+public class Login {
     private String username;
     private String password;
 
@@ -39,7 +40,6 @@ public class Action {
 
         // 构造sql并执行sql
         String sql = "select * from user where username = ? and password = ?;";
-        System.out.println(sql);
 
         // JDBC自带防止SQL注入
         PreparedStatement preState = connect.prepareStatement(sql);

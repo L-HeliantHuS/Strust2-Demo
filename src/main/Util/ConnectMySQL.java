@@ -1,4 +1,4 @@
-package main.Login;
+package main.Util;
 
 import java.sql.DriverManager;
 import java.sql.SQLException;

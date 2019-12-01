@@ -6,19 +6,36 @@
 
 <struts>
     <package name="index" namespace="/" extends="struts-default">
-        <action name="login" class="main.Index.Action" method="execute">
-            <result name="success">main/index.jsp</result>
+
+<!--        登录页面-->
+        <action name="login" class="main.Index.Login" method="execute">
+            <result name="success">main/login.jsp</result>
         </action>
 
-        <action name="checkLogin" class="main.Login.Action" method="execute">
-            <result name="input">main/login.jsp</result>
+<!--        注册页面-->
+        <action name="register" class="main.Index.Register" method="execute">
+            <result name="success">main/register.jsp</result>
+        </action>
+
+
+<!--        登录api-->
+        <action name="checkLogin" class="main.User.Login" method="execute">
+            <result name="input">main/login_error.jsp</result>
             <result name="success">main/success.jsp</result>
             <result name="error">main/error.jsp</result>
         </action>
 
+<!--        个人信息页面-->
         <action name="me" class="main.User.Me" method="execute">
             <result name="success">main/me.jsp</result>
-            <result name="login">main/index.jsp</result>
+            <result name="login">main/login.jsp</result>
+        </action>
+
+<!--        注册api-->
+        <action name="checkRegister" class="main.User.Register" method="execute">
+            <result name="success">main/login.jsp</result>
+            <result name="error">main/error.jsp</result>
+
         </action>
     </package>
 </struts>

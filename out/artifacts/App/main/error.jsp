@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: HeliantHuS
@@ -11,6 +12,6 @@
     <title>Error</title>
 </head>
 <body>
-    NM$L, 小b崽子? 搞事情?
+    <s:property value="ERROR" />, 小b崽子? 搞事情?
 </body>
 </html>

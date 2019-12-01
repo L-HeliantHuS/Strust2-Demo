@@ -1,17 +1,17 @@
-<%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: HeliantHuS
   Date: 11/30/2019
-  Time: 6:31 PM
+  Time: 5:26 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Error</title>
+    <title>Login</title>
 </head>
 <body>
-    <s:property value="ERROR" />, 小b崽子? 搞事情?
+    <strong>Login Wrong!!!</strong>
+    <a href="login.action">Re Try</a>
 </body>
 </html>

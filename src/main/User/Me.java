@@ -20,5 +20,4 @@ public class Me {
             return ActionSupport.LOGIN;
         }
     }
-
 }
