@@ -11,7 +11,7 @@
     <title>Login</title>
 </head>
 <body>
-    <strong>Login Wrong!!!</strong>
+    <strong>Username or Password Error!</strong>
     <a href="login.action">Re Try</a>
 </body>
 </html>

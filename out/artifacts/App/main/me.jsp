@@ -13,5 +13,9 @@
 </head>
 <body>
     <p>当前登录的用户名为: <s:property value="#session.username"/> </p>
+
+    <br>
+
+    <a href="Logout.action">Logout</a>
 </body>
 </html>

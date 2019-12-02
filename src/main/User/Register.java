@@ -41,14 +41,24 @@ public class Register {
         this.confirmPassword = confirmPassword;
     }
 
+    public String getERROR() {
+        return ERROR;
+    }
+
+    public void setERROR(String ERROR) {
+        this.ERROR = ERROR;
+    }
+
     public String execute() throws NoSuchAlgorithmException, UnsupportedEncodingException, SQLException {
         // 判断长度
         if (username.length() > Settings.UserNameLenght || password.length() > Settings.PasswordLenght || confirmPassword.length() > Settings.PasswordLenght) {
+            this.ERROR = "Username or Password len max.";
             return ActionSupport.ERROR;
         }
 
         // 如果密码和确认密码不统一也直接返回ERROR
         if (!password.equals(confirmPassword)) {
+            this.ERROR = "Password || Confirm Password Different!";
             return ActionSupport.ERROR;
         }
 
@@ -62,11 +72,8 @@ public class Register {
         preparedStatement.setString(1, username);
         preparedStatement.setString(2, cipherPwd);
         boolean execStatus = preparedStatement.execute();
-        if (execStatus) {
-            return ActionSupport.SUCCESS;
-        } else {
-            ERROR = "创建用户失败.";
-            return ActionSupport.ERROR;
-        }
+        return ActionSupport.SUCCESS;
     }
+
+
 }

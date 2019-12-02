@@ -12,6 +12,6 @@
     <title>Error</title>
 </head>
 <body>
-    <s:property value="ERROR" />, 小b崽子? 搞事情?
+    异常: <s:property value="ERROR"/>
 </body>
 </html>

@@ -2,6 +2,7 @@ package main.User;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import main.Util.CalcMD5;
 import main.Util.ConnectMySQL;
 
 import java.sql.Connection;
@@ -44,7 +45,7 @@ public class Login {
         // JDBC自带防止SQL注入
         PreparedStatement preState = connect.prepareStatement(sql);
         preState.setString(1, username);
-        preState.setString(2, password);
+        preState.setString(2, CalcMD5.Calc(password));   // 计算MD5值再进行查询
         ResultSet resultSet = preState.executeQuery();
         // 根据是否有下一条数据进行判断
         boolean isAvaiable = resultSet.next();
